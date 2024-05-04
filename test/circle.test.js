@@ -20,12 +20,12 @@ describe("Circle", () => {
   });
 
   test("should render a circle in the middle of the parent", () => {
-    const circle = new Circle("red", 100);
-    const svg = new SVG(500, 500);
+    const circle = new Circle("red", 50);
+    const svg = new SVG(300, 200);
     svg.add(circle);
     const renderedCircle = circle.render();
     expect(renderedCircle).toBe(
-      '<circle cx="200" cy="200" r="100" fill="red" />'
+      '<circle cx="150" cy="100" r="50" fill="red" />'
     );
   });
 });
