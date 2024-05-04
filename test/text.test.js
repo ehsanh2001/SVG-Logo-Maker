@@ -21,4 +21,18 @@ describe("Text", () => {
       '<text text-anchor="middle" x="150" y="120" font-size="60" fill="blue">ABC</text>'
     );
   });
+
+  test("should render the text in the middle of the parent with shiftX and shiftY", () => {
+    const svg = new SVG(300, 200);
+    const text = new Text("blue", "ABC");
+    text.shiftX = 10;
+    text.shiftY = 20;
+    svg.add(text);
+
+    const result = text.render();
+
+    expect(result).toBe(
+      '<text text-anchor="middle" x="160" y="140" font-size="60" fill="blue">ABC</text>'
+    );
+  });
 });
